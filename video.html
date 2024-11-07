@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROject memory - Видео</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Подключение шрифтов -->
+    <style>
+        body {
+            background: #121212; /* Темный фон для dark-mode */
+            color: white; /* Цвет текста */
+        }
+
+        h2 {
+            color: #FFD700; /* Желтый цвет для заголовка "Видео" */
+        }
+
+        .video-item {
+            width: 100%; /* Ширина видео */
+            max-width: 600px; /* Максимальная ширина видео */
+            border-radius: 15px; /* Скругление углов для видео */
+            margin-bottom: 20px; /* Отступ снизу */
+            transition: transform 0.3s ease; /* Плавный переход при наведении */
+        }
+
+        .video-item:hover {
+            transform: scale(1.05); /* Увеличение при наведении */
+        }
+
+        .nav-button {
+            display: block; /* Делаем кнопку блочной для растяжения */
+            width: calc(100% - 20px); /* Учитываем отступы */
+            margin: 20px auto; /* Центрируем кнопку с отступами сверху и снизу */
+            background-color: #FFD700; /* Желтый цвет */
+            color: black;
+            border: none;
+            border-radius: 5px;
+            padding: 15px; /* Увеличенные отступы для лучшего вида */
+            cursor: pointer;
+            font-size: 18px;
+            text-decoration: none; /* Убираем нижнее подчёркивание */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
+        }
+
+        .nav-button:hover {
+            background-color: #FFC300; /* Более темный желтый при наведении */
+            transform: scale(1.05); /* Увеличение кнопки при наведении */
+        }
+
+        a {
+            text-decoration: none; /* Убираем нижнее подчёркивание у всех ссылок на странице */
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #FFD700;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            display:none; /* Скрыта по умолчанию */
+        }
+
+        @keyframes blink {
+            0%, 100% { color: white; }
+            50% { color: #FFA500; }
+        }
+
+        .blinking-photo {
+            animation: blink 1s infinite; /* Анимация мигания с периодом в 1 секунду */
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <header>
+        <h1 class="strict-font"><span style="color: orange;">PRO</span><span style="color: white;">ject memory</span></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="photo.html" class="blinking-photo">Фото</a></li>
+                <li><a href="video.html">Видео</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section id="videos">
+            <h2>Видео</h2> 
+            <p>Здесь вы найдете наши видеоматериалы, которые помогут вам лучше понять наш проект.</p>
+
+            <!-- Контейнер для видео -->
+            <div class ="video-gallery">
+                <video class ="video-item" controls poster ="img/VID/preview1.jpg">
+                    <source src ="img/VID/1.mp4" type ="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+
+                <video class ="video-item" controls poster ="img/VID/preview2.jpg">
+                    <source src ="img/VID/2.mp4" type ="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+
+                <video class ="video-item" controls poster ="img/VID/preview3.jpg">
+                    <source src ="img/VID/3.mp4" type ="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+
+                <!-- Новые видео -->
+                <video class ="video-item" controls poster ="img/VID/preview4.jpg">
+                    <source src ="img/VID/4.mp4" type ="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+
+                <video class ="video-item" controls poster ="img/VID/preview5.jpg">
+                    <source src ="img/VID/5.mp4" type ="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+
+                <video class ="video-item" controls poster ="img/VID/preview6.jpg">
+                    <source src ="img/VID/6.mp4" type ="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+
+                <video class ="video-item" controls poster ="img/VID/preview7.jpg">
+                    <source src ="img/VID/7.mp4" type ="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+
+                <video class ="video-item" controls poster ="img/VID/preview8.jpg">
+                    <source src ="img/VID/8.mp4" type ="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+
+                <!-- Добавлено новое видео -->
+                <video class="video-item" controls poster="img/VID/last.jpeg">
+                    <source src="img/VID/last.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+                
+            </div>
+
+            <!-- Кнопка для перехода на фото -->
+            <a href="photo.html"><button class="nav-button">Перейти к фото</button></a>
+        </section>
+
+        <!-- Кнопка "Наверх" -->
+        <button class="scroll-to-top" onclick="scrollToTop()">Наверх</button>
+    </main>
+
+    <footer>
+        <p style="color: gray;">&copy; 2024 PROject memory. Все права защищены.</p> 
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const videos = document.querySelectorAll('.video-item');
+        let currentlyPlaying = null; // Переменная для отслеживания текущего воспроизводимого видео
+        let currentTime = {}; // Объект для хранения времени воспроизведения каждого видео
+
+        // Инициализация времени воспроизведения для каждого видео
+        videos.forEach((video, index) => {
+            currentTime[index] = 0; // Устанавливаем начальное время на 0
+            video.addEventListener('timeupdate', () => {
+                currentTime[index] = video.currentTime; // Сохраняем текущее время
+            });
+            
+            video.addEventListener('play', () => {
+                // Останавливаем все остальные видео
+                videos.forEach((otherVideo, otherIndex) => {
+                    if (otherVideo !== video) {
+                        otherVideo.pause(); // Останавливаем другие видео
+                        otherVideo.currentTime = currentTime[otherIndex]; // Сбрасываем время воспроизведения
+                    }
+                });
+                
+                currentlyPlaying = video; // Устанавливаем текущее воспроизводимое видео
+            });
+        });
+
+        // Функция для переключения между видео
+        function playVideo(video) {
+            if (currentlyPlaying && currentlyPlaying !== video) {
+                currentlyPlaying.pause(); // Останавливаем текущее видео
+            }
+
+            if (video.paused) {
+                video.currentTime = currentTime[Array.from(videos).indexOf(video)]; // Возвращаем к сохраненному времени
+                video.play(); // Запускаем воспроизведение
+            } else {
+                video.pause(); // Ставим на паузу
+            }
+        }
+
+        // Добавляем обработчик клика на каждое видео
+        videos.forEach(video => {
+            video.onclick = () => playVideo(video);
+        });
+
+        // Обработчик клика по пустому месту для остановки всех видео
+        document.body.addEventListener('click', (event) => {
+            if (!event.target.classList.contains('video-item')) { // Проверяем, что клик не по видео
+                if (currentlyPlaying) {
+                    currentlyPlaying.pause(); // Останавливаем текущее видео
+                    currentlyPlaying.currentTime = currentTime[Array.from(videos).indexOf(currentlyPlaying)]; // Сбрасываем время воспроизведения
+                    currentlyPlaying = null; // Сбрасываем текущее воспроизводимое видео
+                }
+            }
+        });
+
+        // Показать кнопку "Наверх"
+        window.onscroll = function() {
+          const button = document.querySelector('.scroll-to-top');
+          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+              button.style.display = "block";
+          } else {
+              button.style.display = "none";
+          }
+      };
+
+      function scrollToTop() {
+          window.scrollTo({top: 0, behavior: 'smooth'});
+      }
+    </script>
+</body>
+</html>
