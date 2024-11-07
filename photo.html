@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROject memory - Фото</title>
+    <meta name="description" content="Добро пожаловать в раздел фото! Каждое изображение — это уникальное окно в мир наших историй.">
+
+    <!-- Метатеги Open Graph -->
+    <meta property="og:title" content="PROject memory - Фото">
+    <meta property="og:description" content="Добро пожаловать в раздел фото! Каждое изображение — это уникальное окно в мир наших историй.">
+    <meta property="og:image" content="img/ppct.jpg">
+    <meta property="og:url" content="http://ваш_сайт.com/photo.html">
+
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Подключение шрифтов -->
+    <style>
+        body {
+            background-color: #121212; /* Устанавливаем темный фон */
+            color: white; /* Цвет текста */
+            font-family: 'Roboto', sans-serif; /* Применение шрифта Roboto */
+            margin: 0; /* Убираем отступы по умолчанию */
+            padding: 0; /* Убираем отступы по умолчанию */
+        }
+
+        header {
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 20px 0; /* Отступы для шапки */
+        }
+
+        main {
+            text-align: left;
+            margin-left: 20px;
+            padding-top: 20px; /* Отступ сверху для основного контента */
+        }
+
+        h2 {
+            color: #FFD700;
+            font-size: 2em; /* Увеличение размера заголовка */
+        }
+
+        .welcome-text {
+            color: white;
+            line-height: 1.5; /* Увеличение межстрочного интервала */
+        }
+
+        .photo-gallery {
+            display: flex; /* Используем flexbox для организации фотографий в ряды */
+            flex-wrap: wrap; /* Позволяем переносить элементы на следующую строку */
+            gap: 10px; /* Отступы между изображениями */
+        }
+
+        .photo-item {
+            transition: transform 0.3s ease; /* Плавный переход при изменении размера */
+            user-select: none; /* Запрет выделения текста */
+            pointer-events: auto; /* Включаем события указателя для изображений */
+            border-radius: 15px; /* Скругление углов для всех изображений */
+            width: calc(50% - 10px); /* Устанавливаем ширину для двух изображений в ряд с учетом отступов */
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05); /* Увеличение при наведении */
+        }
+
+        .zoomed {
+            border: 3.5px solid black; /* Черная рамка с толщиной 3.5px */
+            border-radius: 15px; /* Скругление углов рамки */
+        }
+
+        .full-width-button {
+            display: block;
+            width: calc(100% - 20px); /* Учитываем отступы */
+            margin: 20px auto; /* Центрируем кнопку с отступами сверху и снизу */
+            padding: 15px; /* Внутренние отступы */
+            background-color: #FFD700; /* Цвет фона кнопки (жёлтый) */
+            color: black; /* Цвет текста кнопки */
+            text-align: center; /* Центрируем текст */
+            border: none; /* Убираем рамку */
+            border-radius: 5px; /* Скруглённые углы */
+            cursor: pointer; /* Курсор при наведении */
+            font-size: 16px; /* Размер шрифта */
+            text-decoration: none; /* Убираем нижнее подчёркивание для ссылки */
+        }
+
+        .full-width-button:hover {
+            background-color: #FFC300; /* Более темный желтый при наведении */
+            transform: scale(1.05); /* Увеличение кнопки при наведении */
+        }
+
+        a {
+            text-decoration: none; /* Убираем нижнее подчёркивание у всех ссылок на странице */
+        }
+
+        h1 {
+            color: white; /* Цвет текста "ject memory" будет белым */
+        }
+        
+        @keyframes blink {
+          0%, 100% { color:white; }
+          50% { color:#FFA500; } /* Оранжевый цвет, как по всему сайту */
+      }
+      
+      .blinking-video { 
+          animation : blink 1s infinite;
+      }
+    </style>
+</head>
+<body class="dark-mode" onclick="closeZoom(event)">
+    <header>
+        <h1 class="strict-font"><span style="color: orange;">PRO</span><span style="color:white;">ject memory</span></h1> <!-- Изменён цвет текста -->
+        <nav>
+          <ul>
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="photo.html">Фото</a></li>
+              <li><a href="video.html" class="blinking-video">Видео</a></li> <!-- Добавлен класс для мигания -->
+          </ul>
+      </nav>
+   </header>
+
+   <main id="main">
+       <section id="photos">
+           <h2>Фото</h2> 
+           <p style="color:white;">Добро пожаловать в раздел фото! Каждое изображение — это уникальное окно в мир наших историй.</p> <!-- Изменён цвет текста -->
+
+           <!-- Контейнер для изображений -->
+           <div class="photo-gallery">
+               <!-- Первый ряд -->
+               <img src="img/nedoedit.jpg" alt="Описание изображения 1" class="photo-item" onclick="toggleZoom(this)" oncontextmenu="return false;">
+               <img src="img/ppct.jpg" alt="Описание изображения 2" class="photo-item" onclick="toggleZoom(this)" oncontextmenu="return false;">
+               
+               <!-- Второй ряд -->
+               <img src="img/zont1.jpg" alt="Описание изображения 3" class="photo-item" onclick="toggleZoom(this)" oncontextmenu="return false;">
+               <img src="img/zont2.jpg" alt="Описание изображения 4" class="photo-item" onclick="toggleZoom(this)" oncontextmenu="return false;">
+               
+               <!-- Третий ряд -->
+               <img src="img/my.jpg" alt="Описание изображения 5" class="photo-item" onclick="toggleZoom(this)" oncontextmenu="return false;">
+               <img src ="img/zalet.jpg" alt ="Описание изображения 6" class ="photo-item" onclick ="toggleZoom(this)" oncontextmenu ="return false;">
+               
+               <!-- Четвертый ряд (новые фотографии) -->
+               <img src ="img/lggb.jpg" alt ="Описание изображения 7" class ="photo-item" onclick ="toggleZoom(this)" oncontextmenu ="return false;">
+               <img src ="img/serd.png" alt ="Описание изображения 8" class ="photo-item" onclick ="toggleZoom(this)" oncontextmenu ="return false;">
+               
+               <!-- Пятый ряд (новые фотографии) -->
+               <img src ="img/parish.jpg" alt ="Описание изображения 9" class ="photo-item" onclick ="toggleZoom(this)" oncontextmenu ="return false;">
+               <img src ="img/bandw.jpg" alt ="Описание изображения 10" class ="photo-item" onclick ="toggleZoom(this)" oncontextmenu ="return false;">
+               
+               <!-- Шестой ряд (новые фотографии) -->
+               <img src ="img/rcore.jpg" alt ="Описание изображения 11" class ="photo-item" onclick ="toggleZoom(this)" oncontextmenu ="return false;">
+               <img src ="img/vk.jpg" alt ="Описание изображения 12" class ="photo-item" onclick ="toggleZoom(this)" oncontextmenu ="return false;">
+           </div>
+
+           <!-- Кнопка для перехода на страницу видео -->
+           <a href ="video.html">
+               <button class ="full-width-button">Перейти к видео</button>
+           </a>
+
+       </section>
+
+   </main>
+
+   <footer>
+       <p style='color :gray;'>&copy ;2024 PROject memory. Все права защищены.</p> 
+   </footer>
+
+   <script src='script.js'></script>
+   <script>
+       let currentlyZoomed = null; // Переменная для отслеживания увеличенного изображения
+
+       function toggleZoom(image) {
+           // Если текущее увеличенное изображение не совпадает с нажатым
+           if (currentlyZoomed && currentlyZoomed !== image) {
+               currentlyZoomed.classList.remove('zoomed'); // Убираем рамку с предыдущего изображения
+               currentlyZoomed.style.transform = "scale(1)"; // Возвращаем предыдущее изображение в исходное положение
+           }
+
+           // Добавляем рамку и увеличиваем изображение
+           if (image.style.transform === "scale(1.3)") { // Увеличиваем до 30%
+               image.classList.remove('zoomed'); // Убираем рамку
+               image.style.transform = "scale(1)"; // Возвращаем в исходное положение
+               currentlyZoomed = null; // Сбрасываем отслеживание увеличенного изображения
+           } else {
+               image.classList.add('zoomed'); // Добавляем рамку
+               image.style.transform = "scale(1.3)"; // Увеличиваем на 30%
+               currentlyZoomed = image; // Обновляем отслеживание увеличенного изображения
+           }
+       }
+
+       function closeZoom(event) {
+           // Закрываем увеличение, если кликнули не по изображению
+           if (currentlyZoomed && !event.target.classList.contains('photo-item')) {
+               currentlyZoomed.classList.remove('zoomed'); // Убираем рамку
+               currentlyZoomed.style.transform = "scale(1)"; // Возвращаем в исходное положение
+               currentlyZoomed = null; // Сбрасываем отслеживание увеличенного изображения
+           }
+       }
+
+       // Отключаем правый клик на изображениях для предотвращения скачивания
+       document.addEventListener('contextmenu', function(e) {
+           if (e.target.classList.contains('photo-item')) {
+               e.preventDefault(); // Разрешаем скачивание, убираем это ограничение
+           }
+       });
+   </script>
+</body>
+</html>
