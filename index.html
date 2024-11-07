@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROject memory - Главная</title>
+    <meta name="description" content="Добро пожаловать на PROject memory, где вы найдете информацию о наших услугах и команде профессионалов.">
+    
+    <!-- Метатеги Open Graph -->
+    <meta property="og:title" content="PROject memory - Главная">
+    <meta property="og:description" content="Добро пожаловать на PROject memory, где вы найдете информацию о наших услугах и команде профессионалов.">
+    <meta property="og:image" content="img/ppct.jpg">
+    <meta property="og:url" content="http://ваш_сайт.com">
+
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Стили для шапки и основного контента */
+        body {
+            background: #121212; /* Темный фон для dark-mode */
+            color: white; /* Цвет текста */
+            font-family: 'Roboto', sans-serif; /* Применение шрифта Roboto */
+            margin: 0; /* Убираем отступы по умолчанию */
+            padding: 0; /* Убираем отступы по умолчанию */
+        }
+
+        header {
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 20px 0; /* Добавляем отступы сверху и снизу для шапки */
+        }
+
+        main {
+            text-align: left;
+            margin-left: 20px;
+            padding-top: 20px; /* Отступ сверху для основного контента */
+        }
+
+        h2 {
+            color: #FFD700;
+            font-size: 2em; /* Увеличение размера заголовка */
+        }
+
+        .typing {
+            display: inline;
+            color: white;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em; /* Увеличение размера заголовка */
+        }
+
+        .welcome-text {
+            color: white;
+            line-height: 1.5; /* Увеличение межстрочного интервала */
+        }
+
+        @keyframes blink {
+            0%, 100% { color: white; }
+            50% { color: #FFA500; }
+        }
+
+        .blinking-photo { animation: blink 1s infinite alternate; }
+        .blinking-video { animation: blink 1s infinite alternate; animation-delay: 0.5s; }
+
+        /* Плавные переходы для кнопок */
+        .nav-button {
+            display: block; /* Делаем кнопку блочным элементом */
+            width: 100%; /* Задаем ширину кнопки на всю ширину родителя */
+            margin-top: 20px; /* Отступ сверху для кнопки */
+            padding: 15px; /* Внутренние отступы */
+            background-color: #FFD700; /* Желтый цвет */
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase; /* Все буквы заглавные */
+            text-align: center; /* Центрируем текст внутри кнопки */
+            text-decoration: none; /* Убираем подчеркивание у текста на кнопке */
+        }
+
+        .nav-button:hover {
+            background-color: #FFC300; /* Более темный желтый при наведении */
+            transform: scale(1.05); /* Увеличение кнопки при наведении */
+        }
+
+        footer {
+           text-align: center;
+           padding: 10px 0;
+           background: #000; /* Черный фон для подвала */
+       }
+
+       .slider img {
+           width: 100%; /* Устанавливаем ширину изображения на 100% для адаптивности */
+           height: auto; /* Автоматическая высота для сохранения пропорций */
+           border-radius: 15px; /* Скругление углов для слайдера */
+       }
+        
+    </style>
+</head>
+<body class="light-mode">
+
+    <header>
+        <h1 class="strict-font">
+            <span id="project-text" class="typing"></span>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="photo.html" class="blinking blinking-photo">Фото</a></li>
+                <li><a href="video.html" class="blinking blinking-video">Видео</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+      <section id="main-content">
+          <h2>Добро пожаловать в PROject memory!</h2>
+          <p class="welcome-text">Это место, где мы сохраняем яркие моменты нашей жизни. Перейдите к нашим фото и видео, чтобы увидеть больше!</p>
+
+          <!-- Оставлено только одно изображение -->
+          <div class="slider">
+              <img src="img/ppct.jpg" alt="Слайд с изображением ppct">
+          </div>
+
+          <!-- Кнопка "Все фото" -->
+          <a href="photo.html" style="text-decoration:none;"> <!-- Убрано подчеркивание у ссылки -->
+              <button class="nav-button">ВСЕ ФОТО</button> 
+          </a>
+      </section>
+    </main>
+
+    <footer>
+        <p style="color: gray;">&copy; 2024 PROject memory. Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      function typeText(text, elementId, delay) {
+          const element = document.getElementById(elementId);
+          let index = 0;
+
+          function printNextChar() {
+              if (index < text.length) {
+                  element.textContent += text.charAt(index);
+                  index++;
+                  setTimeout(printNextChar, delay);
+              } else {
+                  const proSpan = document.createElement('span');
+                  proSpan.style.color = 'orange';
+                  proSpan.textContent = text.slice(0, 3);
+                  
+                  const projectSpan = document.createElement('span');
+                  projectSpan.style.color = 'white';
+                  projectSpan.textContent = text.slice(3);
+
+                  element.textContent = '';
+                  element.appendChild(proSpan);
+                  element.appendChild(projectSpan);
+              }
+          }
+
+          printNextChar();
+      }
+
+      window.onload = function() {
+          typeText("PROject memory", "project-text", 150);
+      };
+    </script>
+</body>
+</html>
